@@ -1,0 +1,5 @@
+/home/mtuser/Test-Project-Java/kafka/common-kafka/src/main/java/br/com/kafka/dispatcher/GsonSerializer.java
+/home/mtuser/Test-Project-Java/kafka/common-kafka/src/main/java/br/com/kafka/consumer/GsonDeserializer.java
+/home/mtuser/Test-Project-Java/kafka/common-kafka/src/main/java/br/com/kafka/consumer/KafkaService.java
+/home/mtuser/Test-Project-Java/kafka/common-kafka/src/main/java/br/com/kafka/consumer/ConsumerFunction.java
+/home/mtuser/Test-Project-Java/kafka/common-kafka/src/main/java/br/com/kafka/dispatcher/KafkaDispatcher.java
