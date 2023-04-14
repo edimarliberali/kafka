@@ -1,5 +1,0 @@
-br/com/kafka/consumer/GsonDeserializer.class
-br/com/kafka/consumer/KafkaService.class
-br/com/kafka/consumer/ConsumerFunction.class
-br/com/kafka/dispatcher/GsonSerializer.class
-br/com/kafka/dispatcher/KafkaDispatcher.class

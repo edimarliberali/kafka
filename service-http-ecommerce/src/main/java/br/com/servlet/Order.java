@@ -1,4 +1,4 @@
-package br.com.service;
+package br.com.servlet;
 
 import java.math.BigDecimal;
 

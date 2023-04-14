@@ -1,8 +1,6 @@
 package br.com.kafka.dispatcher;
 
 import java.io.Closeable;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.ExecutionException;
 
@@ -17,7 +15,6 @@ public class KafkaDispatcher<T> implements Closeable {
     private final KafkaProducer<String, T> producer;
 
     public KafkaDispatcher() {
-
         this.producer = new KafkaProducer<>(properties());
     }
 
@@ -25,18 +22,13 @@ public class KafkaDispatcher<T> implements Closeable {
 
         var record = new ProducerRecord(topic, key, value);
 
-//        final Map<String, String> map = new HashMap<>();
-        final var map = new HashMap<String, String>();
-        map.put("1", "2");
-
-
         final Callback callback = (data, ex) -> {
             if (ex != null) {
                 ex.printStackTrace();
                 return;
             }
 
-            System.out.println("success sending " + data.topic() + "::: partition " + data.partition() + ", offset "
+            System.out.println("Success sending message to " + data.topic() + "::: partition " + data.partition() + ", offset "
                     + data.offset() + ", timestamp " + data.timestamp());
         };
 
@@ -54,7 +46,7 @@ public class KafkaDispatcher<T> implements Closeable {
         properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
         properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         properties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, GsonSerializer.class.getName());
-
+        properties.setProperty(ProducerConfig.ACKS_CONFIG, "all"); //Garante que a mensagem seja sincronizada em todas as réplicas
         return properties;
     }
 

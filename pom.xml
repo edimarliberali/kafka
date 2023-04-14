@@ -8,12 +8,15 @@
     <artifactId>ecommerce</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
     <modules>
+        <module>common-kafka</module>
         <module>service-email</module>
         <module>service-fraud-detector</module>
         <module>service-log</module>
         <module>service-order</module>
-        <module>common-kafka</module>
+        <module>service-users</module>
+        <module>service-http-ecommerce</module>
     </modules>
 
     <properties>
